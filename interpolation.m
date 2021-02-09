@@ -6,15 +6,55 @@ clear all; help interpolation;
 % If your in-class work is stored in your partner's repository, add a 
 % display statement here to tell us your partner's name. 
 
+close all;
+figure;
+x = zeros(1,11);
+y = zeros(1,11);
+f = zeros(11,11);
+for i = 1:1:11
+    for j = 1:1:11
+        x(i) = i;
+        y(j) = j;
+        f(i,j) = i* sin(j);
+    end
+end
+surf(x,y,f);
+
+
 
 %% Tutorial 2 exercise: while loops
 % Use a while loop with random numbers as described in 3.1.2
 
+x = 0;
+i = 0;
+while(x < .9)
+    i = i + 1;
+    x = rand;
+    disp(x);
+end
+disp(i);
 
 %% Tutorial 2 exercise: if-then-else statements
 % Use if-then-else blocks to vary plot style as described in 3.1.3
 
+x = zeros(1,30);
 
+close all;
+for i =  1:30
+  y = sqrt(i);
+    if i == 5
+        plot(i,y,'ro');
+    elseif i == 15
+            plot(i,y, 'go');
+    elseif i == 25
+                plot(i,y, 'mo');
+            else
+                plot(i, y, 'k*');
+    end
+    hold on;
+    pause(0.2);
+end
+            
 %% Tutorial 2 exercise: Lagrange polynomials
 % Calculate and plot the derivative of the Lagrange polynominal, using
 % interp.m and intrpf.m as described in 3.2
